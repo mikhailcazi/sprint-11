@@ -1,0 +1,74 @@
+.pokemon-list {
+  overflow: scroll;
+  height: calc(100vh - 100px);
+}
+
+.pokemon-item {
+  background-color: #184f55;
+  color: white;
+  padding: 5px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.pokemon-item:hover {
+  background-color: #2d919c;
+}
+
+.pokedex-header {
+  height: 60px;
+  padding: 10px;
+  background-color: #082b2f;
+  color: #a2d06b;
+  display: block ruby;
+}
+
+.pokemon-display {
+  padding: 0px 20px;
+  width: 400px;
+}
+
+.pokemon-cart {
+  width: 400px;
+  margin: 50px;
+  border: 10px dashed #7d7d7d;
+  border-radius: 20px;
+  background-color: #ffd0da;
+}
+
+.cart-header {
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  font-size: xx-large;
+  color: #483237;
+  font-weight: bold;
+}
+
+.cart-body {
+  background-color: white;
+  height: 300px;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px gray inset;
+  padding: 20px;
+  margin: 20px;
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  grid-row: auto;
+}
+
+.catch-button {
+  justify-content: center;
+  display: inline-flex;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #83e6c5;
+  box-shadow: 1px 2px 3px gray;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+.catch-button:hover {
+  background-color: #b9eedc;
+}

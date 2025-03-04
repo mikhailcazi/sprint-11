@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background-color: #ecebe7;
+  /* display: flex; */
 }
 
 .App-logo {
@@ -35,4 +37,28 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.char-form-div > label {
+  width: 100px;
+  display: inline-block;
+}
+
+.bg-image {
+  position: absolute;
+}
+
+.car {
+  position: absolute;
+  z-index: 100;
+  width: 150px;
+  transition: top 300ms ease-out;
+}
+
+.top-lane {
+  top: 330px;
+}
+
+.bot-lane {
+  top: 390px;
 }
