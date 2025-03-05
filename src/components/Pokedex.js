@@ -10,18 +10,6 @@ export default function Pokedex() {
   let { data: pokemonList } = useGetPokemonListQuery();
 
   const [myPokemon, setMyPokemon] = useState("");
-
-  fetch("http://localhost:9009/api/stream")
-    .then((res) => {
-      if (!res.ok) {
-        throw new Error("HTTP STATUS: " + res.status);
-      }
-    })
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Oops I did it again"));
-
-  // axios.then(data => )
-
   return (
     <>
       <BrowserRouter>
