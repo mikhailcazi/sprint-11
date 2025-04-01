@@ -5,24 +5,24 @@ import { useAddPokemonMutation } from "../state/pokeCartApi";
 export default function PokeInfo(props) {
   const { data: pokemon } = useGetPokemonQuery(props.name);
   const [pokemonInfo, setPokemonInfo] = useState();
-  // const [addPokemon] = useAddPokemonMutation();
+  const [addPokemon] = useAddPokemonMutation();
 
-  const addPokemon = () => {
-    const URL = "http://localhost:9009/api/pokemons";
+  // const addPokemon = () => {
+  //   const URL = "http://localhost:9009/api/pokemons";
 
-    fetch(URL, { method: "POST", body: pokemonInfo })
-      .then((response) => {
-        if (!response.ok) throw new Error("Fetch Error");
+  //   fetch(URL, { method: "POST", body: pokemonInfo, })
+  //     .then((response) => {
+  //       if (!response.ok) throw new Error("Fetch Error");
 
-        if (response.headers.get("Content-Type").includes("json"))
-          return response.json();
+  //       if (response.headers.get("Content-Type").includes("json"))
+  //         return response.json();
 
-        return response.body();
-      })
-      .then((data) => {
-        console.log(data);
-      });
-  };
+  //       return response.body();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //     });
+  // };
 
   useEffect(() => {
     setPokemonInfo({
