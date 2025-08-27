@@ -14,8 +14,8 @@ export const pokeCartApi = createApi({
         return {
           url: "pokemons",
           headers: {
-            Authorization: token,
-          },
+            "Authorization": token
+          }
         };
       },
       providesTags: ["MyCart"],
@@ -30,9 +30,9 @@ export const pokeCartApi = createApi({
           method: "POST",
           body: pokemonInfo,
           headers: {
-            Authorization: token,
+            "Authorization": token,
             "Content-Type": "application/json",
-          },
+          }
         };
       },
       invalidatesTags: ["MyCart"],

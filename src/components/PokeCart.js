@@ -4,18 +4,27 @@ import { useGetPokemonCollectionQuery } from "../state/pokeCartApi";
 
 export default function PokeCart() {
   const { data: pokemonList } = useGetPokemonCollectionQuery();
+  fetch("/pokemon").then()
+  .catch(err => {
+    if (err = 401) {
+      nav("/")
+    }
+  })
 
   const nav = useNavigate();
 
   const logout = () => {
-    // localStorage.removeItem("token");
-    // nav("/");
-  };
+    window.localStorage.removeItem("token");
+    nav("/");
+  }
 
-  // useEffect(() => {
-  //   const token = localStorage.getItem("token");
-  //   if (!token) nav("/");
-  // });
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+
+    if(!token) {
+      nav("/")
+    }
+  })
 
   return (
     <div className="pokemon-cart">

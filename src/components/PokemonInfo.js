@@ -47,7 +47,7 @@ export default function PokeInfo(props) {
           style={{ width: 20, cursor: "pointer" }}
         />
         <label style={{ padding: "0px 10px", cursor: "pointer" }}>
-          Gotta Catch 'Em All!
+    Add Pokemon
         </label>
       </div>
     </>

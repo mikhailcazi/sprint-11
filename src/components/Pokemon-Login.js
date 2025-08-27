@@ -17,7 +17,7 @@ export default function Login() {
       const { data } = await axios.post(LOGIN_URL, { username, password });
       console.log(data);
 
-      localStorage.setItem("token", data.token);
+      window.localStorage.setItem("token", data.token);
       nav("/pokemon");
     } catch (err) {
       setError(err.response.data.message);

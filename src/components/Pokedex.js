@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import PokeInfo from "./PokemonInfo";
 import { useGetPokemonListQuery } from "../state/pokedexApi";
 import { BrowserRouter, NavLink, Route, Routes } from "react-router-dom";
@@ -7,7 +7,15 @@ import fetchPokemon from "../api/fetchPokemon";
 import Login from "./Pokemon-Login";
 
 export default function Pokedex() {
-  let { data: pokemonList } = useGetPokemonListQuery();
+  // let { data: pokemonList } = useGetPokemonListQuery();
+  const [pokemonList, setPokemonList] = useState(null);
+  
+  useEffect(() => {
+
+    fetchPokemon().then((data) => { 
+    setPokemonList(data);
+  })
+  }, [])
 
   const [myPokemon, setMyPokemon] = useState("");
   return (
@@ -18,8 +26,8 @@ export default function Pokedex() {
             Pokedex
           </span>
           <div className="header-menu">
-            <NavLink to="/">Login</NavLink>
-            <NavLink to="pokemon">Poke-Collection</NavLink>
+            {<NavLink to="/">Login</NavLink>}
+            {<NavLink to="pokemon">Poke-Collection</NavLink>}
           </div>
         </div>
         <div style={{ display: "flex" }}>
